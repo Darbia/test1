@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+@mainColor:#FF841D;
+@tintColor:#A1A1A1;
+@borderColor:#EEEEEE;
+
+// 单行溢出
+.one-txt-cut() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+// 多行溢出 手机端使用
+.txt-cut(@line:2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: @line;
+  -webkit-box-orient: vertical;
+}
+
+.mmb-main {
+  > .row {
+    border-right: 1px solid @borderColor;
+  }
+}
+.mmb-goods {
+  padding:10px 20px;
+  border-left: 1px solid @borderColor;
+  border-bottom: 1px solid @borderColor;
+  height: 270px;
+  > .mmb-img {
+    padding:10px 0;
+    > img {
+      width: 140px;
+      height: 140px;
+    }
+  }
+  > .mmb-title {
+    height:40px;
+    margin:0;
+    color: #000;
+    .txt-cut();
+  }
+  > .mmb-price {
+    color:@mainColor;
+  }
+  > .mmb-source {
+    font-size:12px;
+    color: @tintColor;
+  }
+}

@@ -1,0 +1,109 @@
+@charset "UTF-8";
+.mmb-details > .row {
+  padding: 10px;
+}
+.mmb-details > .row > .mmb-title {
+  color: #5A5A5A;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 40px;
+  margin-bottom: 0;
+}
+.mmb-details > .row > .mmb-price {
+  color: #FF6C00;
+  font-weight: bold;
+}
+.mmb-details > .row > .mmb-source {
+  color: #999999;
+  font-size: 12px;
+  padding: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.mmb-details > .row > .mmb-desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.mmb-details > .row > .mmb-city {
+  margin: 5px 0 2px 5px;
+}
+.mmb-details > .row > .mmb-city > select {
+  border: none;
+  outline: none;
+  resize: none;
+}
+.mmb-details > .row > .mmb-city > .mmb-city-info {
+  font-weight: bold;
+}
+.mmb-details > .row > .mmb-city > .mmb-city-true {
+  color: #FF841D;
+}
+.mmb-details > .row > .mmb-city > span {
+  vertical-align: top;
+}
+.mmb-details > .row > .mmb-gobuy {
+  background-color: #FF9000;
+  padding: 3px;
+}
+.mmb-details > .row > .mmb-com {
+  font-size: 16px;
+  color: #000000;
+  margin: 10px 0;
+}
+.mmb-details > .row > .mmb-input {
+  border: 2px solid #ECEAE8;
+  margin: 0 5px;
+}
+.mmb-details > .row > .mmb-input textarea {
+  border: none;
+  outline: none;
+  resize: none;
+  /*清除移动端默认的阴影效果*/
+  -webkit-appearance: none;
+  /*设置表单元素不自带浏览器默认样式*/
+  width: 100%;
+}
+.mmb-details > .row > .mmb-input .mmb-submit {
+  background-color: #FBFBFB;
+  border-top: 1px solid #F2F2F2;
+}
+.mmb-details > .row > .mmb-input .mmb-submit input {
+  width: 100px;
+  height: 40px;
+  background-color: #FF841D;
+  color: #ffffff;
+  box-sizing: border-box;
+  border: 1px solid #F2F2F2;
+  margin-right: -2px;
+  margin-bottom: -2px;
+  margin-top: -1px;
+  border: none;
+  outline: none;
+  resize: none;
+  /*清除移动端默认的阴影效果*/
+  -webkit-appearance: none;
+  /*设置表单元素不自带浏览器默认样式*/
+  font-size: 16px;
+}
+.mmb-details > .row > .mmb-comlist img {
+  width: 40px;
+  height: 40px;
+}
+.mmb-details > .row > .mmb-comlist .media-heading {
+  color: #5997C0;
+  font-size: 12px;
+}
+.mmb-details > .row > .mmb-comlist .media-heading span {
+  color: #99A5C2;
+}
+.mmb-details > .row > .mmb-comlist .mmb-content {
+  color: #606060;
+}

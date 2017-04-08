@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script src='../lib/jquery/jquery.js'></script>
+
+<body>
+    <input type="button" value='点击'>
+</body>
+<script>
+var sum = 1;
+$('input').click(function() {
+    sum = sum + 1;
+    if (sum == 15) {
+        alert("已经是最后一页了")
+
+    }
+    console.log(sum);
+})
+</script>
+
+</html>

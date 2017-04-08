@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <!-- 引入第三方css -->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/common.css">
+    <link rel="stylesheet" href="../CSS/moneyproduct.css">
+</head>
+
+<body>
+    <!-- header头部开始 -->
+    <header id='header' class='header'>
+        <div class="logo">
+            <a href="index.html" title='慢慢买'>
+                <img src="../images/箭头.png">
+            </a>
+        </div>
+        <h1>国内折扣</h1>
+        <div class="appdown">
+            <a href="javascript:void(0)" title="手机app下载">
+                <img src="../images/header_app.png">
+            </a>
+        </div>
+    </header>
+    <!-- header头部结束 -->
+    <div class="product">
+        <h3>移动端凑单品：海天 鲜味 生抽 1.28L</h3>
+        <div class="info">
+            <span>京东商城</span>
+            <span>10-25</span>
+            <span>小编烟火</span>
+        </div>
+        <div class='content'>
+            <img src="../images/haitao.png" alt="">
+            <p>海天的金标生抽酱油，采用了非转基因大豆以及小麦发酵而成，而自然鲜的口感是有些鲜甜鲜甜的感觉，非常适合用来作为日常炒菜用的调味</p>
+            <p>目前京东商城移动端售价10.9元，不错的凑单品，刚需可入，规格1.28L。</p>
+        </div>
+        <img src="../images/gengduo.png" alt="" class='c-center-x'>
+        <div class="area">
+        </div>
+        <div class="golink">
+        </div>
+    </div>
+    <!-- foot部分start -->
+    <div class="foot">
+        <div class="foot-top">
+            <a href="#">登录</a>
+            <a href="#">注册</a>
+            <a href="#">
+                <i></i> 返回顶部
+            </a>
+        </div>
+        <div class="foot-bottom">
+            <a href="#"><span>手机APP下载</span>&nbsp;慢慢买手机版 </a><span>--掌上比价平台</span>
+            <br>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </div>
+    <!-- foot部分end -->
+</body>
+
+</html>

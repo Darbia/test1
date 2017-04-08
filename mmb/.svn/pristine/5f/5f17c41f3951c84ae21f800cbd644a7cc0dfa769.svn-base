@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <!-- 引入第三方css -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/common.css">
+</head>
+
+<body>
+    <!-- header头部开始 -->
+    <header id='header' class='header'>
+        <div class="logo">
+            <a href="index.html" title='慢慢买'>
+                <img src="../images/header_logo.png">
+            </a>
+        </div>
+        <div class="appdown">
+            <a href="javascript:void(0)" title="手机app下载">
+                <img src="../images/header_app.png">
+            </a>
+        </div>
+    </header>
+    <!-- header头部结束 -->
+    <h3>移动端凑单品：海天 鲜味 生抽 1.28L</h3>
+    <span>京东商城</span>
+    <div>
+        <p>海天的金标生抽酱油，采用了非转基因大豆以及小麦发酵而成，而自然鲜的口感是有些鲜甜鲜甜的感觉，非常适合用来作为日常炒菜用的调味</p>
+        <img src="../images/haitao.png" alt="">
+    </div>
+    <img src="../images/header_logo.png" height="50" width="371" alt="">
+    <div class="area">
+    </div>
+    <div class="golink">
+      
+    </div>
+    <!-- foot部分start -->
+    <div class="foot">
+        <div class="foot-top">
+            <a href="#">登录</a>
+            <a href="#">注册</a>
+            <a href="#">
+                <i></i> 返回顶部
+            </a>
+        </div>
+        <div class="foot-bottom">
+            <a href="#"><span>手机APP下载</span>&nbsp;慢慢买手机版 </a><span>--掌上比价平台</span>
+            <br>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </div>
+    <!-- foot部分end -->
+</body>
+
+</html>

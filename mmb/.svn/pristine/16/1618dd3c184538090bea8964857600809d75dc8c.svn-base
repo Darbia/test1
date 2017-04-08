@@ -1,0 +1,45 @@
+$(function() {
+       // 封装获取字符串中数字的方法
+       function getNum(text){
+         var value = text.replace(/[^0-9]/ig,""); 
+           return(value);
+       }
+    //用来获取折扣商品的列表信息
+       var sum=1;
+       response(sum);
+       function response(num){            
+            $.ajax({
+                  url: 'http://139.199.157.195:9090/api/getmoneyctrl',
+                  dataType: 'jsonp',
+                  data:{pageid: num },
+                  success: function(data) {                    
+                  console.log(data);
+                  template.helper('getNum',getNum);
+                  var html = template('sqklist', data);                  
+                  $('.mc_list').html(html);
+                  }
+             })
+       }    
+      var index;
+      $('.pageChange a').click(function(){
+        if(this.className=='underPage'){
+          sum > 1 ? sum --:1;
+        }
+        else if(this.className=='nextPage'){
+          sum < 15 ? sum ++:15;
+        }
+        response(sum);
+        $('#change').children().each(function(i,v){
+          if ( i+1 == sum) {
+            this.selected = true;
+          }
+        });
+      })  
+      
+      $('#change').change(function(){
+        index =$('#change ').get(0).selectedIndex;
+        response(index+1)
+      })
+       
+       
+});

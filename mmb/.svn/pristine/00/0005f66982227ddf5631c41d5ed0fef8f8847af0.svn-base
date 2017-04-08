@@ -1,0 +1,157 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+/*优惠卷头部样式*/
+#header{
+    height: 50px;
+    background-color:#F4483E;
+    line-height: 50px;
+    /*position:relative;*/
+}
+
+#header .header-left{
+    width: 50px;
+    height: 50px;
+    font-size:50px;
+    float: left;
+    
+}
+#header .header-left img{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+#header .header-center{
+  height: 50px;
+  padding-top:15px;
+  text-align: center;
+ 
+}
+#header .header-center h1{
+    width: 100%;
+    color:white;
+    font-weight:700;
+    font-size:20px;  
+    left:50%;
+    margin-left:-22px; 
+
+}
+
+#header .header-right{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    float:right;
+    padding-top:5px;
+}
+#header .header-right a{
+   width: 40px;
+   height: 40px;
+}
+#header .header-right img{
+    width:40px;
+    height: 40px;
+}
+
+/* 优惠券功能样式 */
+main{
+    margin:20px 0;
+}
+
+.coupon li{
+     display:inline-block;
+     list-style:none;
+     width: 150px;
+     height: 100px;
+     border:1px solid #EEEEEE;
+     padding-top:10px;
+    text-align: center;
+}
+
+.coupon li a{
+   display:inline-block;
+
+}
+.coupon li img{
+    width: 70px;
+    height: 50px;
+}
+/*面包屑样式*/
+.bread{
+    color:black;
+    height:40px;
+    line-height: 40px;
+    border:1px solid #EBEBEB;
+    padding-left:10px;
+    font-size:15px;
+    background: -webkit-gradient(linear,0 0,0 100%,from(#ffffff),to(#ebebeb));
+;
+}
+.bread p{
+   display:inline-block;
+}
+
+/*优惠提示语样式*/
+.tips{
+  color:#999;
+  font-size:12px;
+  text-align: center;
+  margin:8px 0;
+}
+
+/*优惠详情样式 1*/
+ .clearfix .detail{
+  /*border-bottom:1px solid gray;*/
+  display:block;
+  list-style:none;
+
+ }
+
+ .clearfix ul a{
+    text-decoration: none;
+    /*background-color:pink;*/
+    display:inline-block;
+    float: left;
+    width: 100%;
+    height: 100px;
+}
+
+ .clearfix ul a:hover{
+    color:black;
+ }
+
+ul li img{
+    float: left;
+    width: 120px;
+    height: 80px;
+    margin-top:10px;
+    padding:0 10px;
+}
+
+ ul li .info{
+    margin-left:5px;
+    height: 100px;
+    border-bottom:1px solid #E7E7E7;
+    padding-top:5px;
+ }
+ul li .date{
+  color:#EE7700;
+   margin-top:15px;
+}
+ul li .words{
+     font-size:14px; 
+     margin:5px 0; 
+}
+ul li .sign{
+    width: 45px;
+    height: 25px;
+    right: 10px;
+    float: right;
+}
+ 
+ul li em{
+    font-size:15px;
+    font-weight:700;
+}

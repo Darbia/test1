@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+@titleColor: #5A5A5A;
+@mainColor: #FF6C00;
+@tintColor: #999999;
+@btnColor: #FF9000;
+@blackColor: #000000;
+@boderColor: #ECEAE8;
+@iptColor: #FF841D;
+@whiteColor: #ffffff;
+@moreTintColor: #F2F2F2;
+@mostTintColor: #FBFBFB;
+@blueColor: #5997C0;
+@grewColor: #99A5C2;
+@wordColor: #606060;
+
+// 单行溢出
+.one-txt-cut() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// 多行溢出 手机端使用
+.txt-cut(@line:2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: @line;
+  -webkit-box-orient: vertical;
+}
+
+.clearinput() {
+  border: none;
+  outline: none;
+  resize: none;
+  /*清除移动端默认的阴影效果*/
+  -webkit-appearance: none; /*设置表单元素不自带浏览器默认样式*/
+}
+
+.mmb-details {
+  > .row {
+    padding: 10px;
+    > .mmb-title {
+      color: @titleColor;
+      font-weight: bold;
+      .txt-cut();
+      height: 40px;
+      margin-bottom: 0;
+    }
+
+    > .mmb-price {
+      color: @mainColor;
+      font-weight: bold;
+    }
+    > .mmb-source {
+      color: @tintColor;
+      font-size: 12px;
+      padding: 5px;
+      .one-txt-cut();
+    }
+    > .mmb-desc {
+      overflow: hidden;
+      .txt-cut();
+    }
+    > .mmb-city {
+      margin:5px 0 2px 5px;
+      > select {
+        border: none;
+        outline: none;
+        resize: none;
+      }
+      >.mmb-city-info {
+        font-weight:bold;
+      }
+      >.mmb-city-true {
+        color: @iptColor;
+      }
+      >span {
+        vertical-align: top;
+      }
+    }
+    > .mmb-gobuy {
+      background-color: @btnColor;
+      padding: 3px;
+    }
+    > .mmb-com {
+      font-size: 16px;
+      color: @blackColor;
+      margin: 10px 0;
+    }
+    > .mmb-input {
+      border: 2px solid @boderColor;
+      margin: 0 5px;
+      textarea {
+        .clearinput();
+        width: 100%;
+      }
+      .mmb-submit {
+        background-color: @mostTintColor;
+        border-top: 1px solid @moreTintColor;
+        input {
+          width: 100px;
+          height: 40px;
+          background-color: @iptColor;
+          color: @whiteColor;
+          box-sizing: border-box;
+          border: 1px solid @moreTintColor;
+          margin-right: -2px;
+          margin-bottom: -2px;
+          margin-top: -1px;
+          .clearinput();
+          font-size: 16px;
+        }
+      }
+    }
+    > .mmb-comlist {
+      img {
+        width: 40px;
+        height: 40px;
+      }
+      .media-heading {
+        color: @blueColor;
+        font-size: 12px;
+        span {
+          color: @grewColor;
+        }
+      }
+      .mmb-content {
+        color: @wordColor;
+      }
+    }
+  }
+}

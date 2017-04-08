@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--先引入第三方框架-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
+    <!--再引入自己的less-->
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/category.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!--头部区域-->
+    <!--搜索区域-->
+    <!--分类区域-->
+    <section id="category">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+         大家电
+        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-4"><a href="#">电视</a></div>
+                            <div class="col-xs-4"><a href="#">空调</div>
+                            <div class="col-xs-4"><a href="#">影院</div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--底部区域-->
+<!--分类标题模板-->
+<script type="text/html" id="categoryTitleTmp">
+{{each result as value i}}
+  <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}" aria-expanded="true" aria-controls="collapseOne">
+         {{value.title}}
+        </a>
+                                </h4>
+                            </div>
+                            <div id="collapse{{i}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+
+                        </script>
+
+
+                        <!--先引入jQuery bootstra依赖jquery-->
+                        <script src="../lib/jquery/jquery.js"></script>
+                        <!--后引入bootstrap的js文件-->
+                        <script src="../lib/bootstrap/js/bootstrap.js"></script>
+                        <script src="../lib/template/template.js"></script>
+                        <!--最后引入自己的js文件-->
+                        <script src="../JS/category.js"></script>
+
+
+
+</body>
+
+</html>

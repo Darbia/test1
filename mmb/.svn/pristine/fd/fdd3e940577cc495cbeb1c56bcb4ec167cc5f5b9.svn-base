@@ -1,0 +1,54 @@
+/*
+* @Author: Administrator
+* @Date:   2017-01-13 11:34:26
+* @Last Modified by:   jie.wu
+* @Last Modified time: 2017-03-28 21:19:42
+*/
+/* 精灵图的公共类 */
+.jd-icons:before {
+	content: '';
+	background:  url(../image/icons/jd-sprites.png) 0 0 no-repeat;
+	/* 这里不能用50%，因为bgz参照的是父盒子的宽高 */
+	-webkit-background-size: 200px;
+	background-size: 200px;
+}
+/* 水平垂直居中的公共类 */
+.c-center,.cw-center:before {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform:translate(-50%,-50%);
+}
+/* 水平居中公共类 */
+.c-center-x,.cw-center-x:before {
+	position: absolute;
+	left: 50%;
+	transform:translateX(-50%);
+}
+/* 垂直居中公共类 */
+.c-center-y,.cw-center-y:before {
+	position: absolute;
+	top: 50%;
+	transform:translateY(-50%);
+}
+/* 顶部边框公共类 */ 
+.top-line:before {
+	content: '';
+	width: 100%;
+	height: 0;
+	border-top: 1px solid #ccc;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+/* 右边边框公共类 */
+.right-line:before {
+	content: '';
+	width: 0;
+	height: 100%;
+	border-right: 1px solid #ccc;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+

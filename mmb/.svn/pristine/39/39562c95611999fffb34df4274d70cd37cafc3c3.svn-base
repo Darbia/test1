@@ -1,0 +1,79 @@
+'use strict';
+$(function(){
+    //品牌列表请求数据
+    getList();
+    function getList(){
+        $.ajax({
+            type:'get',
+            url:"http://mmb.ittun.com/api/getbrandtitle",
+            success:function(data){
+                // console.log(data);
+                var html = '';
+                html += template("listTmp",data);
+                $("#mmb-list").html(html);
+               
+
+
+                //点击进入品牌大全
+                var lis = $('#mmb-list ul li');
+                var html = '';
+                // console.log(lis);
+                lis.click(function(){
+                    var title = this.dataset.id;
+                    // console.log(title);
+                    var listValue = $(this).children().text();
+                    // console.log(listValue);
+                    var ac = $('#mmb-top .active');
+                    // console.log(ac);
+                    ac.text(listValue.slice(0,listValue.length-4)+'哪个牌子好');
+                    $.ajax({
+                        type:'get',
+                        url:'http://mmb.ittun.com/api/getbrand',
+                        dataType:'json',
+                        data:{brandtitleid:title},
+                        success:function(data){
+                            // console.log(data);
+                             html = template("detailsTmp",data);
+                            $("#mmb-list").html(html);
+                            
+                        }
+                    });
+                    // var goodValue = $('#details .good h2').text();
+                    //         console.log(goodValue);
+                    //         var setValue = ac.text();
+                    //         console.log(setValue);
+                    //         console.log(goodValue);
+                    //产品销量请求数据
+                    $.ajax({
+                        type:'get',
+                        url:"http://mmb.ittun.com/api/getbrandproductlist",
+                        dataType:'json',
+                        data:{brandtitleid:title},
+                        success:function(data){
+                            // console.log(data);
+                             html += template("salesTmp",data);
+                            $("#mmb-list").html(html);
+                        }
+                    });
+                    //产品评论请求数据
+                    $.ajax({
+                        type:'get',
+                        url:"http://mmb.ittun.com/api/getproductcom",
+                        dataType:'json',
+                        data:{productid:title},
+                        success:function(data){
+                            // console.log(data);
+                            html += template("commentTmp",data);
+                            $("#mmb-list").html(html);
+                        }
+                    });
+                });
+               
+            }
+            
+        });
+        
+    }
+     
+    
+});

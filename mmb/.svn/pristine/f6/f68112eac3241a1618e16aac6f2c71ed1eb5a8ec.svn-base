@@ -1,0 +1,74 @@
+#header {
+  height: 50px;
+  background-color: #ff841d;
+  border-bottom: 1px solid #e6e6e6;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+}
+#header > .logo {
+  padding: 10px;
+  margin-left: 5px;
+  width: 40px;
+  float: left;
+}
+#header > .logo > a > img {
+  max-width: 25px;
+}
+#header > h1 {
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  padding-top: 8px;
+}
+.product {
+  padding: 15px 10px;
+  position: relative;
+}
+.product > h3 {
+  font-size: 18px;
+  color: #5a5a5a;
+  font-weight: bold;
+}
+.product > .info > span {
+  color: #999999;
+  line-height: 50px;
+}
+.product > .content {
+  font-size: 16px;
+  color: #606060;
+  font-family: arial;
+  line-height: 24px;
+}
+.product > .content > img {
+  vertical-align: middle;
+  float: right;
+}
+.product > img {
+  margin: 0 auto;
+}
+.product > .area {
+  margin: 20px 0;
+  text-align: center;
+}
+.product > .area > ul > li {
+  text-align: center;
+}
+.product > .area > ul > li > a {
+  display: inline-block;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-bottom: 1px dotted #c0c0c0;
+}
+.product > .area > ul > li > a > span:first-child {
+  color: #000;
+  float: left;
+  margin-right: 25px;
+}
+.product > .area > ul > li > a > span:last-child {
+  color: #f27b04;
+  float: right;
+}

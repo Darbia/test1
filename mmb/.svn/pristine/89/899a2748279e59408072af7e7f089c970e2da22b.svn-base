@@ -1,0 +1,15 @@
+$(function(){
+   //使用ajax省钱控最新优惠信息
+      $.ajax({
+        url: 'http://139.199.157.195:9090/api/getmoneyctrl',
+        dataType: 'jsonp',
+        success: function(data) {
+            // var result1 = data.result;
+            // console.log(result1);
+            var html = template('sqklist', data);
+            console.log(html);
+            $('.list-content').html(html);
+        }
+
+    });
+})

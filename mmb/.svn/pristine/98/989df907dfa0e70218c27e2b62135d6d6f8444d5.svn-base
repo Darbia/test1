@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 第三方css框架库 -->
+    <link rel="stylesheet" type="" href="../lib/bootstrap/css/bootstrap.css">
+    <!-- 基本样式文件 -->
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/common.css">
+    <link rel="stylesheet" href="../CSS/login.css">
+    <!-- 页面样式文件 -->
+    <link rel="stylesheet/less" href="../CSS/brandTitle.less">
+    <!-- 编译less用的js文件 -->
+    <script src="../lib/less/less.js"></script>
+</head>
+
+<body>
+    <!--mmb-layout 整个页面最小宽度320px-->
+    <div id="mmb-layout">
+            <!--logo区域-->
+            <!-- header头部开始 -->
+            <header id='header' class='header'>
+                <div class="logo">
+                    <a href="../index.html" title='慢慢买'>
+                        <img src="../images/icons/header_logo.png">
+                    </a>
+                </div>
+                <div class="appdown">
+                    <a href="javascript:void(0)" title="手机app下载">
+                        <img src="../images/icons/header_app.png">
+                    </a>
+                </div>
+            </header>
+            <!-- header头部结束 -->
+            <!-- search部分strat -->
+            <section id='search' class='search'>
+                <!-- 固定格式，在移动端可以跳出虚拟键盘 -->
+                <form action="#">
+                    <input type="search" placeholder='请输入你想比价的商品'>
+                    <input type="button" value='搜索'>
+                </form>
+            </section>
+    <!-- search部分end -->
+             <!--首页/全部分类-->
+            <ol class="breadcrumb" id="mmb-top">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#">品牌大全</a></li>
+                <li class="active"></li>
+            </ol>
+
+             <!--热门品牌排行榜-->
+            <div id="mmb-list">
+            </div>
+            
+            <!-- 主体登陆模块 -->
+            <main class="login">
+                <div class="loginTab">
+                    <input type="text" placeholder='用户名'>
+                    <input type="password">
+                    <input type="submit" value="登录" id="loginbtn">
+                    <div class="save">
+                        <input type="checkbox" id="">
+                        <span>一个月内自动登陆</span>
+                    </div>
+                    <div class="prompt">用户名或密码错误！</div>
+                    <div class="forget">忘记密码：请电脑登录www.manmanbuy.com找回</div>
+                </div>
+            </main>
+
+            <!-- foot部分start -->
+            <footer class="foot">
+                <div class="foot-top">
+                    <a href="#">登录</a>
+                    <a href="#">注册</a>
+                    <a href="#">
+                        <i></i> 返回顶部
+                    </a>
+                </div>
+                <div class="foot-bottom">
+                    <a href="#"><span>手机APP下载</span>&nbsp;慢慢买手机版 </a><span>--掌上比价平台</span>
+                    <br>
+                    <p>m.manmanbuy.com</p>
+                </div>
+            </footer>
+            <!-- foot部分end -->
+            <!-- 下载app的通栏 -->
+            <section class="app-show">
+                <a class="closefix" href="#"></a>
+                <i class="icon"></i>
+                <p class="fixtitle">慢慢买</p>
+                <p class="">全国比价 查历史价格</p>
+                <a class="down-btn" href="#">立即打开</a>
+            </section>
+    </div>
+
+
+<!--品牌列表模板加载数据-->
+<script type="text/html" id="listTmp">
+            
+            <div id="mmb-billboard">
+                <h1>热门品牌排行</h1>
+            </div>
+            <ul class="listProduct">
+                {{each result as value}}
+                    <li data-id={{value.brandTitleId}}><h3>{{value.brandTitle}}</h3><i class="glyphicon glyphicon-menu-down"></i></li>
+                {{/each}}
+            </ul>
+</script>
+
+<!--品牌详情模板加载数据-->
+<script type="text/html" id="detailsTmp">
+    <div id="details">
+                <div class="good"><h2>哪个好</h2></div>
+                <ul>
+                    {{each result as value i}}
+                    <li>
+                        <a href="#">
+                            <i>{{i + 1}}</i>
+                            <div class="del">
+                               <div class="info">
+                                    <h3>{{value.brandName}}</h3>
+                                    <p>{{value.brandInfo}}</p>
+                               </div>
+                               <span class="glyphicon glyphicon-menu-right"></span>
+                            </div>
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+</script>
+<!--品牌销量模板加载数据-->
+<script type="text/html" id="salesTmp">
+    <div id="sales">
+                <div class="good"><h2>LED电视产品销量排行</h2></div>
+                <ul>
+                    {{each result as value}}
+                    <li>
+                        <a href="#">
+                            <div class="pic fl">{{#value.productImg}}</div>
+                            <div class="info">
+                                <p>{{value.productName}}</p>
+                                <div class="price"><em>{{value.productPrice}}</em><span><em class="wx">☆☆☆☆☆</em></span></div>
+                                <div class="comment"><em>{{value.productQuote}}</em><em>{{value.productCom}})</em></div>
+                            </div>
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+</script>
+<!----产品评论--模板加载数据-->
+<script type="text/html" id="commentTmp">
+    <div id="comment">
+                <div class="good"><h2>平板电影最小评论</h2></div>
+                <ul>
+                    {{each result as value}}
+                    <li>
+                        <a href="#" class="com">
+                            <div class="pic fl"><img src="../images/images/2.jpg" alt=""></div>
+                            <div class="info1">
+                                 <p>乐视TV(Letv) 超3 X55 55英寸智能LED液晶 超级电视 4K超清电视</p>
+                            </div>
+                        </a>
+                        <div class="pl">
+                            <a href="#">
+                            <div class="name">
+                                <span class="xm">{{value.comName}}</span>
+                                <em>:</em>
+                                <span class="xx">☆☆☆☆☆</span>
+                                <span class="time">{{value.comTime}}</span>
+                            </div>
+                            <div class="con">
+                                {{value.comContent}}
+                            </div>
+                            </a>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+</script>
+
+
+
+
+
+
+
+
+<!-- 先引入jQuery 因为bootstrap依赖jQuery -->
+<script src="../lib/jquery/jquery.js"></script>
+<!-- bootstrap js文件 -->
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+<!--模板 js 文件-->
+<script src="../lib/template/template.js"></script>
+<!-- 页面js文件 -->
+<script src="../JS/brandTitle.js"></script>
+</body>
+
+
+</html>

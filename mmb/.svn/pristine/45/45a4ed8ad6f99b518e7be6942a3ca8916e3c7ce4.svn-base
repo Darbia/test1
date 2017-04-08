@@ -1,0 +1,64 @@
+/*
+ * @Author: Administrator
+ * @Date:   2017-03-29 23:26:25
+ * @Last Modified by:   Administrator
+ * @Last Modified time: 2017-03-30 10:02:41
+ */
+
+'use strict';
+$(function () {
+    setproductTitle();
+    function setproductTitle() {
+        //var v = parseUrl();
+        //var getid = v['categoryid'];
+        var getid = GetQueryString("categoryid");
+        var categoryName = GetQueryString("categoryname");
+        //console.log(categoryName);
+        $.ajax({
+            //url: "http://139.199.157.195:9090/api/getcategorytitle",
+            url:"http://mmb.ittun.com/api/getproductlist",
+            data:{"categoryid":getid},
+            success: function (data) {
+                var html = template("productListTmp", data);
+                $(".media").html(html);
+                //$(".category-title>.breadcrumb>li:last-child").html(categoryName);
+                $(".category-title>.breadcrumb>li:last-of-type").html(categoryName);
+            }
+
+        })
+
+       /* $.ajax({
+            //url: "http://139.199.157.195:9090/api/getcategorytitle",
+            url:"http://mmb.ittun.com/api/getproductlist",
+            data:{"categoryid":getid},
+            success: function (data) {
+                var html = template("productListTmp", data);
+                $(".category-title>.breadcrumb>li:last-of-type,.media").html(html);
+            }
+
+        })
+*/
+
+        /*function parseUrl() {
+            var url = location.href;
+            var i = url.indexOf('?');
+            if (i == -1) return;
+            var querystr = url.substr(i + 1);
+            var arr1 = querystr.split('&');
+            var arr2 = new Object();
+            for (i in arr1) {
+                var ta = arr1[i].split('=');
+                arr2[ta[0]] = ta[1];
+            }
+            return arr2;
+        }
+*/
+        function GetQueryString(name)
+        {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  decodeURI(r[2]); return null;
+        }
+
+    }
+})

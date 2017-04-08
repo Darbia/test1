@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>肯德基详情页面</title>
+        <!-- 引入公共样式 -->
+        <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../CSS/normalize.css">
+        <link rel="stylesheet" href="../CSS/base.css">
+        <link rel="stylesheet" href="../CSS/common.css">
+        <!-- 引入自己的样式 -->
+        <link rel="stylesheet" href="../CSS/coupon.css">
+        <!-- 引入模板引擎 -->
+        <script type="text/javascript" src="../lib/jquery/jquery.js"></script>
+        <script type="text/javascript" src="../lib/template/template.js"></script>
+        <script type="text/javascript" >
+              $(function(){
+                 $.ajax({
+                     url:'http://mmb.ittun.com/api/getcouponproduct',
+                     data:{couponid:1},
+                     dataType:'jsonp',
+                     success:function(data){
+                        console.log(data);
+                        var html=template('cou',data);
+                        $('.detail').html(html);
+                     }
+                 })
+              })
+        </script>
+
+        <script type="text/html" id="cou">
+             {{each result as value i}}
+                  <li>
+                     <a href="{{value.couponId}}">
+                        <div class="{{value.ProductId}}">
+                            {{#value.couponProductImg}}
+                        </div>
+                        <div class="info">
+                            <p class="words">{{value.couponProductName}}</p>
+                            <em>{{value.couponProductPrice}}</em>
+                            <img src="../images/back1.png" alt="" class="sign">
+                            <p class="date">{{value.couponProductTime}}</p>
+                        </div>
+                     </a>
+                  </li>
+             {{/each}}
+        </script>
+    </head>
+    <body>
+      <!-- 详情页面头部开始 -->
+        <div id="header">
+          <div class="header-left">
+            <a href="index.html"><img src="../images/back.png" alt=""></a>
+          </div>
+           <div class="header-right">
+            <a href=""><img src="../images/header_app.png" alt=""></a>
+          </div>
+          <div class="header-center">
+              <h1>肯德基优惠券</h1>
+          </div> 
+        </div> 
+        <!-- 优惠提示语 -->
+        <div class="tips">
+           --点餐前出示手机中的优惠卷，即可享受优惠
+        </div>
+        <!-- 详情页面头部结束 -->
+        <!-- 详情页面详情部分开始 -->
+        <main class="clearfix">
+           <ul class="detail">
+             <li>
+                 <a href="">
+                    <div class="pic">
+                        <img src="../images/ic_trend.png" alt="">
+                    </div>
+                    <div class="info">
+                        <p class="words">c24抹茶/抹茶双旋冰激凌 bbbbbbbbbbbbbbbbbb2017年3月</p>
+                        <em>￥7</em>
+                        <img src="../images/back (1).png" alt="" class="sign">
+                        <p class="date">有效期至3月31日</p>
+                    </div>
+                 </a>
+             </li>
+             
+           </ul>
+        </main>
+        <!-- 详情页面详情部分结束 -->
+         <!-- 面包部分开始 -->
+            <div class="bread">
+                <p>首页</p>
+                <p>></p>
+                <p>优惠券</p>
+                <p>></p>
+                <p>肯德基优惠券</p>
+            </div>
+    <!-- 面包屑部分结束 -->
+        <!-- foot部分start -->
+        <div class="foot">
+            <div class="foot-top">
+                <a href="#">登录</a>
+                <a href="#">注册</a>
+                <a href="#">
+                    <i></i> 返回顶部
+                </a>
+            </div>
+            <div class="foot-bottom">
+                <a href="#"><span>手机APP下载</span>&nbsp;慢慢买手机版 </a><span>--掌上比价平台</span>
+                <br>
+                <p>m.manmanbuy.com</p>
+            </div>
+        </div>
+        <!-- foot部分end -->
+    </body>
+</html>

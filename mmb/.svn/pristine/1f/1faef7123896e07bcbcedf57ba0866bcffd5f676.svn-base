@@ -1,0 +1,41 @@
+$(function() {
+    //获取菜单栏上的数据
+    $.ajax({
+        url: 'http://139.199.157.195:9090/api/getindexmenu',
+        dataType: 'jsonp',
+        success: function(data) {
+            var result = data.result;
+            console.log(result);
+            var ul = "<ul class='row'>";
+            $.each(result, function(i, e) {
+                ul += "<li class='col-xs-3'><a href=" + e.titlehref + ">" + e.img.replace(/images/,'images/icons') + "<p>" + e.name + "</p></li>";
+            });
+            ul += "</ul>";
+            $("#menu").html(ul);
+            var list = $("#menu>ul>li:nth-child(8)");
+            list.on('click', function() {
+                var divs = document.querySelectorAll("#menu>ul>li:nth-last-child(-n+4)");
+                $.each(divs, function(i, v) {
+                    v.classList.toggle('show');
+                })
+            })
+        }
+    });
+
+    //用来获取折扣商品的列表信息
+    $.ajax({
+        url: 'http://139.199.157.195:9090/api/getmoneyctrl',
+        dataType: 'jsonp',
+        success: function(data) {
+            // var result1 = data.result;
+            // console.log(result1);
+            var html = template('list', data);
+            console.log(html);
+            $('.list-content').html(html);
+        }
+
+    });
+
+
+
+});

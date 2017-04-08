@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 第三方css框架库 -->
+    <link rel="stylesheet" type="" href="../lib/bootstrap/css/bootstrap.css">
+    <!-- 基本样式文件 -->
+    <link rel="stylesheet" href="../CSS/base.css">
+    <!-- 页面样式文件 -->
+    <link rel="stylesheet/less" href="../CSS/brandTitle.less">
+    <!-- 编译less用的js文件 -->
+    <script src="../lib/less/less.js"></script>
+</head>
+
+<body>
+    <!--mmb-layout 整个页面最小宽度320px-->
+    <div id="mmb-layout">
+             <!--首页/全部分类-->
+            <ol class="breadcrumb" id="mmb-top">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">品牌大全</a></li>
+                <li class="active"></li>
+            </ol>
+
+             <!--热门品牌排行榜-->
+            <div id="mmb-list">
+            </div>
+            <!--品牌详情-->
+            <!--<div id="details">
+                <div class="good"><h2>平板电视哪个牌子好</h2></div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i>1</i>
+                            <div class="del">
+                               <div class="info">
+                                    <h3>海信平板电视</h3>
+                                    <p>30天全网销售：248976件</p>
+                               </div>
+                               <span class="glyphicon glyphicon-menu-right"></span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>-->
+
+            <!--产品销量排行-->
+            <!--<div id="sales">
+                <div class="good"><h2>LED电视产品销量排行</h2></div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <div class="pic fl"><img src="../images/images/2.jpg" alt=""></div>
+                            <div class="info">
+                                <p>乐视TV(Letv) 超3 X55 55英寸智能LED液晶 超级电视 4K超清电视</p>
+                                <div class="price"><em>￥3266.00</em><span><i>☆☆☆☆☆</i></span></div>
+                                <div class="comment"><i>报价(6)</i><em>评论(3522)</em></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>-->
+
+            <!--产品评论-->
+           <!-- <div id="comment">
+                <div class="good"><h2>平板电影最小评论</h2></div>
+                <ul>
+                    <li>
+                        <a href="#" class="com">
+                            <div class="pic fl"><img src="../images/images/2.jpg" alt=""></div>
+                            <div class="info1">
+                                 <p>乐视TV(Letv) 超3 X55 55英寸智能LED液晶 超级电视 4K超清电视</p>
+                            </div>
+                        </a>
+                        <div class="pl">
+                            <a href="#">
+                            <div class="name">
+                                <span class="xm">b***r</span>
+                                <em>:</em>
+                                <span class="xx">☆☆☆☆☆</span>
+                                <span class="time">2016/10/1</span>
+                            </div>
+                            <div class="con">
+                                使用了一周整体不错，主要是为了看纪录片和足球。装在窗户上有种大鱼缸的感觉哈！清晰度不错色彩也可以，应该说对得起2200的价格！还送了五年乐视会员，看英超所有比赛都free，但乐观乐视内容这块还不太丰富，应为家里也有百事通bestv和小米盒子，比较了下，电影百事通最好，纪录片小米最好，只有体育这块乐视比那两家好，还要多努力啊！电视本身有个不足，音响太差，太山寨了！而且不支持3.5mm接口或红白莲音频输出，害得我折腾半天，必须买光纤音频线
+                            </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>-->
+    </div>
+
+
+<!--品牌列表模板加载数据-->
+<script type="text/html" id="listTmp">
+            
+            <div id="mmb-billboard">
+                <h1>热门品牌排行</h1>
+            </div>
+            <ul>
+                {{each result as value}}
+                    <li data-id={{value.brandTitleId}}><h3>{{value.brandTitle}}</h3><i class="glyphicon glyphicon-menu-down"></i></li>
+                {{/each}}
+            </ul>
+</script>
+
+<!--品牌详情模板加载数据-->
+<script type="text/html" id="detailsTmp">
+    <div id="details">
+                <div class="good"><h2>平板电视哪个牌子好</h2></div>
+                <ul>
+                    {{each result as value}}
+                    <li>
+                        <a href="#">
+                            <i>{{value.brandId + 1}}</i>
+                            <div class="del">
+                               <div class="info">
+                                    <h3>{{value.brandName}}</h3>
+                                    <p>{{value.brandInfo}}</p>
+                               </div>
+                               <span class="glyphicon glyphicon-menu-right"></span>
+                            </div>
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+</script>
+<!--品牌销量模板加载数据-->
+<script type="text/html" id="salesTmp">
+    <div id="sales">
+                <div class="good"><h2>LED电视产品销量排行</h2></div>
+                <ul>
+                    {{each result as value}}
+                    <li>
+                        <a href="#">
+                            <div class="pic fl">{{#value.productImg}}</div>
+                            <div class="info">
+                                <p>{{value.productName}}</p>
+                                <div class="price"><em>{{value.productPrice}}</em><span><em class="wx">☆☆☆☆☆</em></span></div>
+                                <div class="comment"><em>{{value.productQuote}}</em><em>{{value.productCom}})</em></div>
+                            </div>
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+</script>
+<!----产品评论--模板加载数据-->
+<script type="text/html" id="commentTmp">
+    <div id="comment">
+                <div class="good"><h2>平板电影最小评论</h2></div>
+                <ul>
+                    {{each result as value}}
+                    <li>
+                        <a href="#" class="com">
+                            <div class="pic fl"><img src="../images/images/2.jpg" alt=""></div>
+                            <div class="info1">
+                                 <p>乐视TV(Letv) 超3 X55 55英寸智能LED液晶 超级电视 4K超清电视</p>
+                            </div>
+                        </a>
+                        <div class="pl">
+                            <a href="#">
+                            <div class="name">
+                                <span class="xm">{{value.comName}}</span>
+                                <em>:</em>
+                                <span class="xx">☆☆☆☆☆</span>
+                                <span class="time">{{value.comTime}}</span>
+                            </div>
+                            <div class="con">
+                                {{value.comContent}}
+                            </div>
+                            </a>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+</script>
+<!--<script type="text/html" id="comTmp">
+    {{each result as value}}
+        <li>
+                        <a href="#" class="com">
+                            <div class="pic fl">{{#value.productImg}}</div>
+                            <div class="info1">
+                                 <p>{{value.productName}}</p>
+                            </div>
+                        </a>
+                    </li>
+    {{/each}}
+</script>-->
+
+
+
+
+
+
+
+<!-- 先引入jQuery 因为bootstrap依赖jQuery -->
+<script src="../lib/jquery/jquery.js"></script>
+<!-- bootstrap js文件 -->
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+<!--模板 js 文件-->
+<script src="../lib/template/template.js"></script>
+<!-- 页面js文件 -->
+<script src="../JS/brandTitle.js"></script>
+</body>
+
+
+</html>

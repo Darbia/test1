@@ -1,0 +1,49 @@
+$(function() {
+
+    //用来获取折扣商品的列表信息
+
+    // $('.underPage').click(function() {
+    //     sum--;
+    //     if (sum == 1) {
+    //         alert("已经是第一页了")
+
+    //     }
+
+    //     return sum;
+    // });
+
+    var sum = 1;
+    $('.nextPage').click(function() {
+        sum = sum + 1;
+        if (sum == 15) {
+            alert("已经是最后一页了")
+
+        }
+        // return sum;
+        console.log(sum);
+
+    })
+
+    $.ajax({
+        url: 'http://139.199.157.195:9090/api/getmoneyctrl',
+        dataType: 'jsonp',
+        data: { pageid: sum },
+        success: function(data) {
+            var html = template('sqklist', data);
+            $('.mc_list').html(html);
+
+        }
+    })
+
+
+
+    template.helper('getNum', getNum)
+
+    function getNum(text) {
+        var value = text.replace(/[^0-9]/ig, "");
+        return (value);
+    }
+
+
+});
+

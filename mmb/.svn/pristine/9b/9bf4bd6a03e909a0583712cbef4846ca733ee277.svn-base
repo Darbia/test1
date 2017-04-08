@@ -1,0 +1,10 @@
+.product-list>.media>a{
+    text-decoration: none;
+    display: block;
+}
+.product-list>.media>a>img{
+    float: left;
+}
+.media-body2{
+    float: right;
+}

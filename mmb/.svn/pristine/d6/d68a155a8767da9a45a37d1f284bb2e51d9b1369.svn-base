@@ -1,0 +1,32 @@
+@charset 'UTF-8';
+
+.sitenav{
+	padding: 10px 0;
+	background-color: #fff;
+	> .link{
+		width: 300px;
+		margin: 10px auto 0;
+		font-size: 14px;
+		> a{
+			padding: 10px 8px;
+			border: 1px solid #bfbfbf;
+			background-color: #f4f4f4;
+			margin: 0 0 5px 5px;
+			> img{
+				display: inline-block;
+				width: auto;
+				height: auto;
+				vertical-align: middle;
+				margin-right: 5px;
+			}
+		}
+	}
+	.nav{
+		margin: 20px 0;
+		padding-left: 8px;
+		line-height: 36px;
+		border-top: 1px solid #ebebeb;
+		border-bottom: 1px solid #cfcfcf;
+		background: linear-gradient(to bottom, #ffffff, #cfcfcf);
+	}
+}

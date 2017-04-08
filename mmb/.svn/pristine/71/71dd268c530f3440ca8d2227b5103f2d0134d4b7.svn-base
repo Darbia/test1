@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 第三方css框架库 -->
+    <link rel="stylesheet" type="" href="../lib/bootstrap/css/bootstrap.css">
+    <!-- 基本样式文件 -->
+    <link rel="stylesheet" href="../CSS/base.css">
+    <!-- 页面样式文件 -->
+    <link rel="stylesheet/less" href="../CSS/baicaijia.less">
+    <!-- 编译less用的js文件 -->
+    <script src="../lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 顶部标题 -->
+    <div id="header">
+        <div class="title">
+            <a href="index.html" class="fl"><img src="../images/images/icon-back.png" alt=""></a>
+            <a href="#" class="fr"><img src="../images/icons/header_app.png" alt=""></a>
+             <h2>白菜价-淘宝内部券</h2>
+        </div>
+    </div>
+    <!-- 导航部分 -->
+    <div id="nav">
+        <ul>
+           
+        </ul>
+        <div class="nav-btn"><a class="btn"></a></div>
+    </div>
+   
+    <!--搜索框-->
+    <div id="search">
+         <div class="search-r fr">
+           <button>搜索</button>
+       </div>
+       <div class="search-l">
+           <form>
+               <i></i>
+               <input type="search" name="" placeholder="搜索商品即可查内部券">
+           </form>
+       </div>
+      
+    </div>
+
+      <!-- 广告部分 -->
+    <div id="banner">
+        <img src="../images/images/banner.png" alt="">
+    </div>
+   
+    <!-- 商品展示部分 -->
+    <div id="product">
+        <ul>
+            <!-- <li class="product-li">
+                    <a href="http://s.click.taobao.com/lkqGHQx"></a>
+                     <div class="product-l fl">
+                         <img src="../images/images/1.jpg" alt="">
+                     </div>
+                     <div class="product-r">
+                         <div>
+                             <div class="product-r-t"><span class="b">[包邮]</span>双十一红包 今日开启</div>
+                             <div class="product-r-b"><em>¥</em>0.0<del>¥0</del></div>
+                         </div>
+                         
+                         <div class="product-r-t1">
+                             <div class="bar clearfix"><a href="http://shop.m.taobao.com/shop/coupon.htm?activityId=27a14c9fc6bb4a48b917d567fcf8f664&sellerId=2246833798" class="goquan" target="_blank"></a><i><em style="width:1%;"></em><span>1%</span></i><b>已领82张</b></div>
+                             <div class="clearfix product-r-t2">
+                                 <div class="fl product-r-b1">
+                                     <a href="http://shop.m.taobao.com/shop/coupon.htm?activityId=27a14c9fc6bb4a48b917d567fcf8f664&sellerId=2246833798" target="_blank">点此领15元优惠券</a>
+                                 </div>
+                                 <div class="fr product-r-b2">
+                                     <a biz-itemid="56297410_8818824_54778388" isconvert="1" href="http://s.click.taobao.com/3HlIdQx" target="_blank">下单链接</a>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </li>-->
+        </ul>
+    </div>
+    <!-- 底部部分 -->
+    <div id="foot">
+    </div>
+
+<!--导航部分模板-->
+<script type="text/html" id="navTmp">
+{{each result as value i}}
+<li>
+    <a href="#" data-id ={{value.titleId}}>{{value.title}}</a>
+</li>
+{{/each}}
+</script>
+
+<!--商品展示模板-->
+<script type="text/html" id="productTmp">
+{{each result as value}}
+    <li class="product-li">
+                    <a href="http://s.click.taobao.com/lkqGHQx"></a>
+                     <div class="product-l fl">
+                         {{#value.productImg}}
+                     </div>
+                     <div class="product-r">
+                         <div>
+                             <!--{{#value.productName}}
+                             {{#value.productPrice}}-->
+                             <div class="product-r-t">{{#value.productName}}</div>
+                             <div class="product-r-b">{{#value.productPrice}}</div>
+                         </div>
+                         
+                         <div class="product-r-t1">
+                             {{#value.productCouponRemain}}
+                             <div class="clearfix product-r-t2">
+                                 <div class="fl product-r-b1">
+                                     {{#value.productCoupon}}
+                                 </div>
+                                 <div class="fr product-r-b2">
+                                     {{#value.productHref}}
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </li>
+{{/each}}
+</script>
+
+
+<!-- 先引入jQuery 因为bootstrap依赖jQuery -->
+<script src="../lib/jquery/jquery.js"></script>
+<!-- bootstrap js文件 -->
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+<!--模板 js文件-->
+<script src="../lib/template/template.js"></script>
+<!--滑动模块 js 文件-->
+<script src="../JS/swipe.js"></script>
+<!-- 页面js文件 -->
+<script src="../JS/baicaijia.js"></script>
+</body>
+
+
+</html>

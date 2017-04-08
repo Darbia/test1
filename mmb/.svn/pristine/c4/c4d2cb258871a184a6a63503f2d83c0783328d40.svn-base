@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商城导航</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/sitenav.css">
+</head>
+<body>
+	<!-- 顶部通栏 -->
+	<header>商城导航</header>
+	<!-- 主体部分 -->
+	<main class="sitenav">
+		<div class="link clearfix">
+			<a href="#" class="fl">
+				<img src="../images/images/1.png" alt="">
+				京东商城
+			</a>
+		</div>
+		<div class="nav">
+			<a href="#">首页</a>
+			&nbsp;>&nbsp;
+			<a href="#">商城导航</a>
+		</div>
+	</main>
+	<!-- 底部 -->
+	<footer></footer>
+</body>
+</html>
